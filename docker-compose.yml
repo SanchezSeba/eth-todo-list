@@ -13,10 +13,15 @@ services:
     volumes:
       - ./:/src/
       - /src/node_modules
+    ports:
+      - 3000:3000
+      - 3001:3001
     networks:
       - eth-todo-list
   ganache:
     image: trufflesuite/ganache-cli:v6.12.2
+    ports:
+      - 8545:8545
     networks:
       - eth-todo-list
 networks:
